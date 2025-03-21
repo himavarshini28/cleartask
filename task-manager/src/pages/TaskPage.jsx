@@ -1,52 +1,30 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import TaskList from "../components/TaskList"
+import TaskListGrid from '../components/TaskList';
 import {
   Box,
   Typography,
   Button,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
   Snackbar,
-  Alert
+  Alert,
 } from '@mui/material';
-import TaskFormModal from '../components/CreateTaskModal'; 
+import TaskFormModal from '../components/CreateTaskModal';
 
 const TaskPage = () => {
   const [tasks, setTasks] = useState([]);
-  const [filters, setFilters] = useState({
-    taskType: '',
-    dueDate: '',
-    assignedTo: '',
-    priority: '',
-  });
-
   const [openModal, setOpenModal] = useState(false);
   const [snackbar, setSnackbar] = useState({ open: false, message: '' });
-
-  useEffect(() => {
-    fetchTasks();
-  }, []);
 
   const fetchTasks = () => {
     axios.get('http://localhost:4000/tasks').then((res) => setTasks(res.data));
   };
 
-  const handleFilterChange = (field) => (event) => {
-    setFilters((prev) => ({ ...prev, [field]: event.target.value }));
-  };
-
-  const filteredTasks = tasks.filter((task) =>
-    (!filters.taskType || task.type === filters.taskType) &&
-    (!filters.dueDate || task.dueDate === filters.dueDate) &&
-    (!filters.assignedTo || task.assignedTo === filters.assignedTo) &&
-    (!filters.priority || task.priority === filters.priority)
-  );
+  useEffect(() => {
+    fetchTasks();
+  }, []);
 
   return (
-    <Box sx={{ width: '100%', p: 0, m: 0 }}>
+    <Box sx={{ width: '100%', height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Box
         sx={{
           display: 'flex',
@@ -66,34 +44,10 @@ const TaskPage = () => {
         </Button>
       </Box>
 
-      {/* Filters */}
-      <Box
-        sx={{
-          bgcolor: 'white',
-          p: 2,
-          borderBottom: '1px solid #e0e0e0',
-          display: 'flex',
-          gap: 2,
-          flexWrap: 'wrap',
-        }}
-      >
-        <Typography variant="subtitle1" fontWeight="bold" sx={{ width: '100%' }}>
-          Quick Filters
-        </Typography>
-
-        <FormControl size="small" sx={{ minWidth: 150 }}>
-          <InputLabel>Task Type</InputLabel>
-          <Select value={filters.taskType} label="Task Type" onChange={handleFilterChange('taskType')}>
-            <MenuItem value="Bug">Bug</MenuItem>
-            <MenuItem value="Feature">Feature</MenuItem>
-            <MenuItem value="Improvement">Improvement</MenuItem>
-          </Select>
-        </FormControl>
+      <Box sx={{ flexGrow: 1, bgcolor: '#fafafa' }}>
+        <TaskListGrid tasks={tasks} fetchTasks={fetchTasks} />
       </Box>
 
-      {/* Task List */}
-    <TaskList/>
-      {/* ✅ Call TaskFormModal */}
       <TaskFormModal
         open={openModal}
         onClose={() => setOpenModal(false)}
@@ -103,7 +57,6 @@ const TaskPage = () => {
         }}
       />
 
-      {/* Snackbar */}
       <Snackbar
         open={snackbar.open}
         autoHideDuration={3000}

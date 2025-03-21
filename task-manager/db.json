@@ -3,92 +3,285 @@
     {
       "id": "1",
       "title": "Follow up with client",
-      "type": "Call",
+      "type": "call",
       "priority": "High",
-      "assignedTo": "John Doe",
-      "associatedRecord": "Client #1234",
-      "dueDate": "2025-03-25 10:00",
-      "notes": "Discuss project updates"
+      "dueDate": "2025-03-22",
+      "associatedTo": "John Doe",
+      "assignedTo": "Alex Morgan",
+      "completed": true
     },
     {
       "id": "2",
-      "title": "Send monthly report",
-      "type": "Email",
+      "title": "Send proposal",
+      "type": "email",
       "priority": "Medium",
-      "assignedTo": "Jane Smith",
-      "associatedRecord": "Monthly Reports",
-      "dueDate": "2025-03-28 15:30",
-      "notes": "Attach financial overview"
+      "dueDate": "2025-03-21",
+      "associatedTo": "Acme Corp",
+      "assignedTo": "Emma Wilson"
     },
     {
       "id": "3",
-      "title": "Team sync-up meeting",
-      "type": "Meeting",
+      "title": "Project Kick-off",
+      "type": "meeting",
       "priority": "Low",
-      "assignedTo": "Team Alpha",
-      "associatedRecord": "Internal Calendar",
-      "dueDate": "2025-03-30 11:00",
-      "notes": "Project timeline discussion"
+      "dueDate": "2025-03-23",
+      "associatedTo": "Project Alpha",
+      "assignedTo": "Liam Brown",
+      "completed": true
     },
     {
-      "id": "2204",
-      "title": "ghjk",
-      "type": "Feature",
-      "assignedTo": "wertyuj",
-      "associatedTo": "dscv",
-      "priority": "Medium",
-      "dueDate": "0678-05-31",
-      "notes": "e345678"
+      "id": "4",
+      "title": "Check status update",
+      "type": "call",
+      "priority": "High",
+      "dueDate": "2025-03-24",
+      "associatedTo": "Michael Scott",
+      "assignedTo": "Sophia Davis"
     },
     {
-      "id": "659c",
-      "title": "defrgthyjuki",
-      "type": "Bug",
-      "assignedTo": "ertyui",
-      "associatedTo": "ertyu",
+      "id": "5",
+      "title": "Reminder email",
+      "type": "email",
       "priority": "Medium",
-      "dueDate": "",
-      "notes": "wsdfghjkl"
+      "dueDate": "2025-03-20",
+      "associatedTo": "Sales Team",
+      "assignedTo": "Oliver Johnson"
     },
     {
-      "id": "dc40",
-      "title": "werty",
-      "type": "Feature",
-      "assignedTo": "qwsdefrtyui",
-      "associatedTo": "ertghyjukil",
-      "priority": "Medium",
-      "dueDate": "6789-05-31",
-      "notes": "erfgthyjuk"
+      "id": "6",
+      "title": "Monthly review",
+      "type": "meeting",
+      "priority": "Low",
+      "dueDate": "2025-03-25",
+      "associatedTo": "HR Dept",
+      "assignedTo": "Isabella Martinez"
     },
     {
-      "id": "bd43",
-      "title": "ertyui",
-      "type": "Feature",
-      "assignedTo": "esfdgthju",
-      "associatedTo": "e4rt5ryuiop",
-      "priority": "Medium",
-      "dueDate": "45678-03-12",
-      "notes": "dafsdgfhgjkhjlk"
+      "id": "7",
+      "title": "Discuss contract terms",
+      "type": "call",
+      "priority": "High",
+      "dueDate": "2025-03-26",
+      "associatedTo": "Legal Team",
+      "assignedTo": "James Anderson"
     },
     {
-      "id": "361d",
-      "title": "sdfrgthjk",
-      "type": "Feature",
-      "assignedTo": "swdefrgtyhu",
-      "associatedTo": "ertghnm ",
-      "priority": "Medium",
-      "dueDate": "6789-05-31",
-      "notes": "easrdtfyukilo"
+      "id": "8",
+      "title": "Feedback request",
+      "type": "email",
+      "priority": "Low",
+      "dueDate": "2025-03-27",
+      "associatedTo": "Design Team",
+      "assignedTo": "Charlotte Lee"
     },
     {
-      "id": "dac8",
-      "title": "qsdfgh",
-      "type": "Feature",
-      "assignedTo": "ewrtdghjkh",
-      "associatedTo": "rthyjukj,",
+      "id": "9",
+      "title": "Sprint planning",
+      "type": "meeting",
+      "priority": "High",
+      "dueDate": "2025-03-28",
+      "associatedTo": "Development Team",
+      "assignedTo": "Benjamin Taylor"
+    },
+    {
+      "id": "10",
+      "title": "Customer support call",
+      "type": "call",
       "priority": "Medium",
-      "dueDate": "275760-02-06",
-      "notes": "sdfghjklok;';"
+      "dueDate": "2025-03-29",
+      "associatedTo": "Support Team",
+      "assignedTo": "Mia Harris"
+    },
+    {
+      "id": "11",
+      "title": "Product launch update",
+      "type": "email",
+      "priority": "High",
+      "dueDate": "2025-03-30",
+      "associatedTo": "Marketing Dept",
+      "assignedTo": "William Martin"
+    },
+    {
+      "id": "12",
+      "title": "Budget review",
+      "type": "meeting",
+      "priority": "Medium",
+      "dueDate": "2025-04-01",
+      "associatedTo": "Finance Team",
+      "assignedTo": "Amelia Thompson"
+    },
+    {
+      "id": "13",
+      "title": "Vendor check-in",
+      "type": "call",
+      "priority": "Low",
+      "dueDate": "2025-04-02",
+      "associatedTo": "Suppliers",
+      "assignedTo": "Ethan White"
+    },
+    {
+      "id": "14",
+      "title": "Internal memo",
+      "type": "email",
+      "priority": "Low",
+      "dueDate": "2025-04-03",
+      "associatedTo": "Company Staff",
+      "assignedTo": "Abigail Moore"
+    },
+    {
+      "id": "15",
+      "title": "Team retrospective",
+      "type": "meeting",
+      "priority": "High",
+      "dueDate": "2025-04-04",
+      "associatedTo": "Agile Team",
+      "assignedTo": "Daniel Clark"
+    },
+    {
+      "id": "16",
+      "title": "Project discussion",
+      "type": "call",
+      "priority": "High",
+      "dueDate": "2025-04-05",
+      "associatedTo": "Project Beta",
+      "assignedTo": "Ella Lewis"
+    },
+    {
+      "id": "17",
+      "title": "Onboarding checklist",
+      "type": "email",
+      "priority": "Medium",
+      "dueDate": "2025-04-06",
+      "associatedTo": "New Hires",
+      "assignedTo": "Henry Young"
+    },
+    {
+      "id": "18",
+      "title": "Performance review",
+      "type": "meeting",
+      "priority": "High",
+      "dueDate": "2025-04-07",
+      "associatedTo": "HR",
+      "assignedTo": "Grace Walker"
+    },
+    {
+      "id": "19",
+      "title": "Technical support",
+      "type": "call",
+      "priority": "Medium",
+      "dueDate": "2025-04-08",
+      "associatedTo": "IT Team",
+      "assignedTo": "Sebastian Hall"
+    },
+    {
+      "id": "20",
+      "title": "Weekly newsletter",
+      "type": "email",
+      "priority": "Low",
+      "dueDate": "2025-04-09",
+      "associatedTo": "All Employees",
+      "assignedTo": "Lily Allen"
+    },
+    {
+      "id": "21",
+      "title": "Client onboarding",
+      "type": "meeting",
+      "priority": "High",
+      "dueDate": "2025-04-10",
+      "associatedTo": "Client B",
+      "assignedTo": "Matthew Wright"
+    },
+    {
+      "id": "22",
+      "title": "Strategy call",
+      "type": "call",
+      "priority": "Medium",
+      "dueDate": "2025-04-11",
+      "associatedTo": "Strategy Team",
+      "assignedTo": "Avery King"
+    },
+    {
+      "id": "23",
+      "title": "Policy update",
+      "type": "email",
+      "priority": "Low",
+      "dueDate": "2025-04-12",
+      "associatedTo": "HR Dept",
+      "assignedTo": "Jack Scott"
+    },
+    {
+      "id": "24",
+      "title": "Design review",
+      "type": "meeting",
+      "priority": "High",
+      "dueDate": "2025-04-13",
+      "associatedTo": "Design Team",
+      "assignedTo": "Sofia Adams"
+    },
+    {
+      "id": "25",
+      "title": "Account review call",
+      "type": "call",
+      "priority": "Medium",
+      "dueDate": "2025-04-14",
+      "associatedTo": "Accounts Dept",
+      "assignedTo": "Luke Nelson"
+    },
+    {
+      "id": "26",
+      "title": "Meeting notes distribution",
+      "type": "email",
+      "priority": "Low",
+      "dueDate": "2025-04-15",
+      "associatedTo": "Team Leads",
+      "assignedTo": "Zoe Carter"
+    },
+    {
+      "id": "27",
+      "title": "Quarterly meeting",
+      "type": "meeting",
+      "priority": "High",
+      "dueDate": "2025-04-16",
+      "associatedTo": "Board Members",
+      "assignedTo": "Owen Mitchell"
+    },
+    {
+      "id": "28",
+      "title": "Customer inquiry follow-up",
+      "type": "call",
+      "priority": "Medium",
+      "dueDate": "2025-04-17",
+      "associatedTo": "Customer Service",
+      "assignedTo": "Hannah Perez"
+    },
+    {
+      "id": "29",
+      "title": "Team appreciation email",
+      "type": "email",
+      "priority": "Low",
+      "dueDate": "2025-04-18",
+      "associatedTo": "All Staff",
+      "assignedTo": "Leo Roberts"
+    },
+    {
+      "id": "30",
+      "title": "Marketing strategy discussion",
+      "type": "meeting",
+      "priority": "High",
+      "dueDate": "2025-04-19",
+      "associatedTo": "Marketing Team",
+      "assignedTo": "Scarlett Turner"
+    },
+    {
+      "id": "6b8d",
+      "title": "New task",
+      "type": "Email",
+      "assignedTo": "Varshini",
+      "associatedTo": "Hima",
+      "priority": "Medium",
+      "dueDate": "2025-03-19",
+      "notes": "Hello",
+      "completed": true
     }
   ]
 }

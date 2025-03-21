@@ -1,22 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Box, Checkbox, Dialog, DialogTitle, DialogActions, Button, Snackbar, Alert } from '@mui/material';
 import axios from 'axios';
 
-const TaskListGrid = () => {
-  const [tasks, setTasks] = useState([]);
+const TaskListGrid = ({ tasks, fetchTasks }) => {
   const [openConfirm, setOpenConfirm] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'success' });
-
-  const fetchTasks = async () => {
-    const res = await axios.get('http://localhost:4000/tasks');
-    setTasks(res.data);
-  };
-
-  useEffect(() => {
-    fetchTasks();
-  }, []);
 
   const handleCheckboxClick = (task) => {
     setSelectedTask(task);
@@ -48,14 +38,29 @@ const TaskListGrid = () => {
       ),
     },
     { field: 'title', headerName: 'Task Title', width: 200 },
-    { field: 'priority', headerName: 'Priority', width: 130 },
+    {
+      field: 'priority',
+      headerName: 'Priority',
+      width: 130,
+      renderCell: (params) => {
+        let color = '';
+        if (params.value === 'High') color = 'red';
+        else if (params.value === 'Medium') color = 'yellow';
+        else if (params.value === 'Low') color = 'green';
+        return (
+          <span style={{ color, fontWeight: 'bold' }}>
+            {params.value}
+          </span>
+        );
+      },
+    },
     { field: 'dueDate', headerName: 'Due Date', width: 150 },
     { field: 'associatedTo', headerName: 'Associated Record', width: 180 },
     { field: 'assignedTo', headerName: 'Assigned To', width: 180 },
   ];
 
   return (
-    <Box height={500} width="100%" p={2}>
+    <Box height="calc(100vh - 120px)" width="100%" p={2}>
       <DataGrid
         rows={tasks}
         columns={columns}
@@ -68,8 +73,12 @@ const TaskListGrid = () => {
       <Dialog open={openConfirm} onClose={() => setOpenConfirm(false)}>
         <DialogTitle>Mark this task as complete?</DialogTitle>
         <DialogActions>
-          <Button onClick={() => setOpenConfirm(false)} color="secondary">Cancel</Button>
-          <Button onClick={handleConfirmComplete} color="primary" variant="contained">Confirm</Button>
+          <Button onClick={() => setOpenConfirm(false)} color="secondary">
+            Cancel
+          </Button>
+          <Button onClick={handleConfirmComplete} color="primary" variant="contained">
+            Confirm
+          </Button>
         </DialogActions>
       </Dialog>
 
