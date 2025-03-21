@@ -19,7 +19,7 @@ const MainContent = () => {
       case 'Tasks':
         return <TaskPage />;
       default:
-        return <DashboardPage />;
+        return <TaskPage />;
     }
   };
 
@@ -36,6 +36,8 @@ const MainContent = () => {
             alignItems: 'center',
             px: 3,
             borderBottom: '1px solid #e0e0e0',
+            m:0,
+            p:2,
           }}
         >
           <IconButton>
@@ -51,7 +53,7 @@ const MainContent = () => {
         <Box
           sx={{
             flexGrow: 1,
-            p: 4,
+            p: 0,
             bgcolor: '#f8f9fa',
             color: '#000',
             height: 'calc(100vh - 60px)',
