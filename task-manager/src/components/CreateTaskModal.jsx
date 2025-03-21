@@ -5,9 +5,6 @@ import {
   DialogContent,
   DialogActions,
   TextField,
-  FormControl,
-  InputLabel,
-  Select,
   MenuItem,
   Button,
   Snackbar,
@@ -82,32 +79,34 @@ const TaskFormModal = ({ open, onClose, onSuccess }) => {
             error={!!errors.title}
             helperText={errors.title}
           />
-          <FormControl fullWidth margin="dense" error={!!errors.type}>
-            <InputLabel shrink>Task Type *</InputLabel>
-            <Select
-              value={taskData.type}
-              onChange={handleChange('type')}
-              displayEmpty
-              renderValue={(selected) => selected || 'Select Task Type'}
-            >
-              <MenuItem value="Bug">Bug</MenuItem>
-              <MenuItem value="Feature">Feature</MenuItem>
-              <MenuItem value="Improvement">Improvement</MenuItem>
-            </Select>
-          </FormControl>
-          <FormControl fullWidth margin="dense" error={!!errors.priority}>
-            <InputLabel shrink>Priority *</InputLabel>
-            <Select
-              value={taskData.priority}
-              onChange={handleChange('priority')}
-              displayEmpty
-              renderValue={(selected) => selected || 'Select Priority'}
-            >
-              <MenuItem value="High">High</MenuItem>
-              <MenuItem value="Medium">Medium</MenuItem>
-              <MenuItem value="Low">Low</MenuItem>
-            </Select>
-          </FormControl>
+          <TextField
+            select
+            label="Task Type *"
+            fullWidth
+            margin="dense"
+            value={taskData.type}
+            onChange={handleChange('type')}
+            error={!!errors.type}
+            helperText={errors.type}
+          >
+            <MenuItem value="Call">Call</MenuItem>
+            <MenuItem value="Email">Email</MenuItem>
+            <MenuItem value="Meeting">Meeting</MenuItem>
+          </TextField>
+          <TextField
+            select
+            label="Priority *"
+            fullWidth
+            margin="dense"
+            value={taskData.priority}
+            onChange={handleChange('priority')}
+            error={!!errors.priority}
+            helperText={errors.priority}
+          >
+            <MenuItem value="High">High</MenuItem>
+            <MenuItem value="Medium">Medium</MenuItem>
+            <MenuItem value="Low">Low</MenuItem>
+          </TextField>
           <TextField
             label="Associated To *"
             fullWidth

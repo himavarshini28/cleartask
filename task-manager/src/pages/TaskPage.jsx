@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import TaskList from "../components/TaskList"
 import {
   Box,
   Typography,
@@ -91,17 +92,7 @@ const TaskPage = () => {
       </Box>
 
       {/* Task List */}
-      <Box sx={{ p: 2 }}>
-        {filteredTasks.map((task) => (
-          <Box key={task.id} sx={{ p: 2, bgcolor: 'white', mb: 2, borderRadius: 1, boxShadow: '0 0 4px rgba(0,0,0,0.05)' }}>
-            <Typography fontWeight="bold">{task.title}</Typography>
-            <Typography variant="body2">
-              Type: {task.type} | Assigned To: {task.assignedTo} | Priority: {task.priority} | Due: {task.dueDate}
-            </Typography>
-          </Box>
-        ))}
-      </Box>
-
+    <TaskList/>
       {/* ✅ Call TaskFormModal */}
       <TaskFormModal
         open={openModal}
